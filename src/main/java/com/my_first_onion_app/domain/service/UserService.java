@@ -15,11 +15,11 @@ public class UserService {
     this.userRepository = userRepository;
   }
 
-  Optional<User> findByUsername(final String username) {
+  public Optional<User> findByUsername(final String username) {
     return userRepository.findByUsername(username);
   }
 
-  User save(final User user) {
+  public User save(final User user) {
     return userRepository.save(user);
   }
 
