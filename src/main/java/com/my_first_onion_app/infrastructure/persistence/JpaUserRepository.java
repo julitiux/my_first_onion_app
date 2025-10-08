@@ -9,13 +9,19 @@ import java.util.Optional;
 @Repository
 public class JpaUserRepository implements UserRepository {
 
+  private final SpringDataUserRepository repository;
+
+  public JpaUserRepository(SpringDataUserRepository repository) {
+    this.repository = repository;
+  }
+
   @Override
   public Optional<User> findByUsername(String username) {
-    return Optional.empty();
+    return repository.findByUsername(username);
   }
 
   @Override
   public User save(User user) {
-    return null;
+    return repository.save(user);
   }
 }
